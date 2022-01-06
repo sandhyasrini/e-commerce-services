@@ -1,7 +1,7 @@
 const express = require('express')
 const port = process.env.PORT || 8000;
 var cors = require('cors')
-const routes = require('./api/routes')
+const routes = require('./api/routes/routes')
 const initiateMongoServer = require('./config/database')
 
 const app = express();

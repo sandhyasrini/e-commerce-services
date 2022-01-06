@@ -1,5 +1,5 @@
 const { Router } = require('express');
-const user = require("../models/Users")
+const user = require("../../models/Users")
 const routes = Router();
 
 routes.get('/login', async (req, res) => {
@@ -8,7 +8,7 @@ routes.get('/login', async (req, res) => {
 })
 
 routes.post('/users', async (req, res) => {
-    console.log(req.body);
+    
     const User = new user({
         username: req.body.username,
         password: req.body.password
