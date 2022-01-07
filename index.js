@@ -1,6 +1,7 @@
 const express = require('express')
 const port = process.env.PORT || 8000;
-var cors = require('cors')
+const cors = require('cors')
+const logger = require('morgan')
 const routes = require('./api/routes/routes')
 const initiateMongoServer = require('./config/database')
 
@@ -9,6 +10,7 @@ const app = express();
 initiateMongoServer();
 
 app.use(cors())
+app.use(logger('dev'))
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use('/api', routes)
